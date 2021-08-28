@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/mostraOpcoesSw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mostrar_opcoes" />
+
+    <LinearLayout
+        android:id="@+id/selecinarOpcaoLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mostraOpcoesSw"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/txt_select_op"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@string/selecione_uma_op" />
+
+        <RadioGroup
+            android:id="@+id/opcaoRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/op_par"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/par" />
+
+            <RadioButton
+                android:id="@+id/op_impar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/impar" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/labelJogadaTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/selecinarOpcaoLl"
+        android:layout_alignBottom="@id/jogadaLl"
+        android:layout_alignParentStart="true"
+        android:gravity="center_vertical"
+        android:text="@string/selecione_jogada" />
+
+    <LinearLayout
+        android:id="@+id/jogadaLl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/selecinarOpcaoLl"
+        android:layout_toEndOf="@id/labelJogadaTv"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/zeroBT"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/zero"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/umBT"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/one"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/doisBT"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/two"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/tresBT"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/three"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/quatroBT"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/four"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/cincoBT"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/five"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/labelJogadaComputadorTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/labelJogadaTv"
+        android:layout_alignBottom="@id/jgadaComputadorImg"
+        android:layout_alignParentStart="true"
+        android:gravity="center_vertical"
+        android:layout_marginEnd="10dp"
+        android:text="@string/jogada_do_computador" />
+
+    <ImageView
+        android:id="@+id/jgadaComputadorImg"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:layout_below="@id/jogadaLl"
+        android:layout_toEndOf="@id/labelJogadaComputadorTv" />
+
+    <TextView
+        android:id="@+id/labelResultadoTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="10dp"
+        android:layout_below="@id/labelJogadaComputadorTv"
+        android:text="@string/resultado" />
+
+    <TextView
+        android:id="@+id/resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/jgadaComputadorImg"
+        android:layout_toEndOf="@id/labelResultadoTv" />
+
+</RelativeLayout>
